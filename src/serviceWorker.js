@@ -10,9 +10,9 @@ const isLocalhost = Boolean(
 
 export function register(config) {
   if ('serviceWorker' in navigator) {
-    const swUrl = `${window.location.origin}/service-worker.js`;
-
     window.addEventListener('load', () => {
+      const swUrl = `${window.location.origin}/service-worker.js`;
+
       if (isLocalhost) {
         checkValidServiceWorker(swUrl, config);
         navigator.serviceWorker.ready.then(() => {
