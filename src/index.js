@@ -12,5 +12,13 @@ root.render(
   </React.StrictMode>
 );
 
-// Register the service worker
-serviceWorker.register();
+serviceWorker.register({
+  onUpdate: registration => {
+    if (window.confirm('New content is available; please refresh.')) {
+      if (registration.waiting) {
+        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+      window.location.reload();
+    }
+  }
+});
