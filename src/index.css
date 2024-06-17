@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("../public/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: circular;
+  src: url("../public/CircularStd-Medium.otf");
+}
+@font-face {
+  font-family: circular-book;
+  src: url("../public/CircularStd-Book.otf");
+}
+@font-face {
+  font-family: circular-bold;
+  src: url("../public/CircularStd-Bold.otf");
+}
+@font-face {
+  font-family: poppins-semibold;
+  src: url("../public/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: poppins-extrabold;
+  src: url("../public/Poppins-ExtraBold.ttf");
+}
+.poppins {
+  font-family: poppins;
+}
+
+.poppins-semibold {
+  font-family: poppins-semibold;
+}
+.poppins-extrabold {
+  font-family: poppins-extrabold;
+}
+
+.circular {
+  font-family: circular;
+}
+.circular-bold {
+  font-family: circular-bold;
+}
+.circular-book {
+  font-family: circular-book;
+}
