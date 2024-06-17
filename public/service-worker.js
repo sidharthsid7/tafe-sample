@@ -6,6 +6,8 @@ const urlsToCache = [
   '/index.html',
   '/static/css/main.css',
   '/static/js/main.js',
+  '/src/app.js',
+  '/src/index.js'
   // Include other files you need to cache
 ];
 
