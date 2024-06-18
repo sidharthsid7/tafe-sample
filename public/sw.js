@@ -1,4 +1,4 @@
-let cacheData = "appV1";
+const cacheData = "appV1";
 
 // Install event
 self.addEventListener("install", (event) => {
@@ -11,8 +11,9 @@ self.addEventListener("install", (event) => {
         "/index.html",
         "/manifest.json",
         "/favicon.ico",
-        "/service-worker.js",
-        "/" // Make sure the root path is cached too.
+        "/",
+        "/logo192.png",
+        "/logo512.png"
       ]).catch((error) => {
         console.error('Failed to cache:', error);
       });
@@ -24,16 +25,15 @@ self.addEventListener("install", (event) => {
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((networkResponse) => {
-        // Optionally, you can cache the network response here
-        return networkResponse;
-      }).catch((error) => {
-        console.error('Fetching failed:', error);
-        throw error;
+      return cachedResponse || fetch(event.request).then((networkResponse) => {
+        return caches.open(cacheData).then((cache) => {
+          cache.put(event.request, networkResponse.clone());
+          return networkResponse;
+        });
       });
+    }).catch((error) => {
+      console.error('Fetching failed:', error);
+      throw error;
     })
   );
 });
