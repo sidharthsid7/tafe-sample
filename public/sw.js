@@ -11,6 +11,7 @@ self.addEventListener("install", (event) => {
         "/index.html",
         "/manifest.json",
         "/favicon.ico",
+        "/service-worker.js",
         "/" // Make sure the root path is cached too.
       ]).catch((error) => {
         console.error('Failed to cache:', error);
