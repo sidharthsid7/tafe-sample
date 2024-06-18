@@ -1,6 +1,6 @@
 let cacheData = "appV1";
 this.addEventListener("install", (event) => {
-  event.waitUnitll(
+  event.waitUntil(
     caches.open(cacheData).then((cache) => {
       cache.addAll([
         "/static/js/main.chunk.js",
