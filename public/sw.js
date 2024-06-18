@@ -3,12 +3,12 @@ this.addEventListener("install", (event) => {
   event.waitUnitll(
     caches.open(cacheData).then((cache) => {
       cache.addAll([
-        "./static/js/main.chunk.js",
-        "./static/js/0.chunk.js",
-        "./static/js/bundle.js",
-        "./index.html",
-        "./",
-        "https://animated-boba-079345.netlify.app/"
+        "/static/js/main.chunk.js",
+        "/static/js/0.chunk.js",
+        "/static/js/bundle.js",
+        "/index.html",
+        "/manifest.json",
+        "/",
       ]);
     })
   );
